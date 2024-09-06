@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<!-- templatemo 418 form pack -->
-    <!-- 
-    Form Pack
-    http://www.templatemo.com/preview/templatemo_418_form_pack 
-    -->
-	<title>Create Account</title>
+	<title>M. L. Medical Centre</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<meta charset="UTF-8">
@@ -62,15 +57,50 @@
 }
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
-  grid-gap: 10px; /* Adjust the gap between images as needed */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
   margin-top: 15px;
 }
 
 .image-grid img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  z-index: 999;
+}
+
+.popup-image {
+  width: 50%;
+  height: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+  .popup-image {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+  .popup {
+    top: 55%;
+  }
 }
 	</style>
 </head>
@@ -119,7 +149,7 @@
 		<div class="col-md-12">			
 			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="#" method="post">
 				<div class="form-inner">
-					<div class="form-group">
+					<div class="form-group" style="text-align: left;">
 					<div class="col-md-4">
 						<label class="check-inline">
 							<input type="checkbox" name="optionsRadios" id="optionscheck1" value="option1"> Pathology Test
@@ -150,6 +180,8 @@
 							<input type="checkbox" name="optionsRadios" id="optionscheck6" value="option1"> Sleep Study
 						</label>
 					</div>
+					</div>
+					<div class="form-group">
 			        <div class="col-md-6">		          	
 			            <label for="first_name" class="control-label">First Name</label>
 			            <input type="text" class="form-control" id="first_name" placeholder="">		            		            		            
@@ -207,14 +239,18 @@
 		      </form>		      
 		</div>
 	</div>
-<div class="container">
+	<div class="container">
 	<div class="image-grid">
-		<img src="./images/img/1.jpg" alt="Image 1">
-		<img src="./images/img/2.jpg" alt="Image 2">
-		<img src="./images/img/3.jpg" alt="Image 3">
-		<img src="./images/img/4.jpg" alt="Image 4">
-		<img src="./images/img/5.jpg" alt="Image 5">
-		<img src="./images/img/6.jpg" alt="Image 6">
+		<img src="./images/img/1.jpg" alt="Image 1" onclick="showPopup(this)">
+		<img src="./images/img/2.jpg" alt="Image 2" onclick="showPopup(this)">
+		<img src="./images/img/3.jpg" alt="Image 3" onclick="showPopup(this)">
+		<img src="./images/img/4.jpg" alt="Image 4" onclick="showPopup(this)">
+		<img src="./images/img/5.jpg" alt="Image 5" onclick="showPopup(this)">
+		<img src="./images/img/6.jpg" alt="Image 6" onclick="showPopup(this)">
+	  </div>
+	  <div class="popup" id="popup">
+		<img src="" alt="Popup Image" class="popup-image">
+		<span class="close-btn" onclick="closePopup()">X</span>
 	  </div>
 	</div>
 	<!-- Footer -->
@@ -342,7 +378,16 @@
 	<!-- Copyright -->
   </footer>
   <!-- Footer -->
-   
+   <script>
+	function showPopup(image) {
+  document.getElementById("popup").style.display = "block";
+  document.querySelector(".popup-image").src = image.src;
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+	</script>
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
