@@ -99,7 +99,15 @@
 }
 @media (max-width: 768px) { /* Adjust the breakpoint as needed */
   .popup {
-    top: 55%;
+  display: none;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  z-index: 999;
   }
 }
 	</style>
