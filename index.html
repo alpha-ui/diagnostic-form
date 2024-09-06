@@ -33,11 +33,11 @@
 	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 }
 .btn {
-    background: #b22c26;
+    background: red;
     color: #fff;
     border: 0;
     border-radius: 25px;
-    padding: 4px 43px;
+    padding: 4px 40px;
     height: auto;
     font-size: 17px;
     font-weight: 700;
@@ -115,6 +115,20 @@
     z-index: 999;
   }
 }
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    font-size: small;
+}
 	</style>
 </head>
 <body class="templatemo-bg-gray">
@@ -157,97 +171,114 @@
 		  </form>
 		</div> -->
 	  </nav>
-	<h1 class="margin-bottom-15">About Us</h1>
+	<h1 class="margin-bottom-15" style="color: red;">About Us</h1>
 	<div class="container">
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
-	<p class="margin-bottom-15">ML Medical Centre is a leading pathology, X-ray, and sonography center located in Andheri West. With a team of highly skilled medical professionals and state- of-the-art technology, we provide accurate and reliable diagnostic services.</p>
+	<p class="margin-bottom-15">ML Medical Centre is a leading pathology, X-ray, and sonography center located in Jogeshwari. With a team of highly skilled medical professionals and state- of-the-art technology, we provide accurate and reliable diagnostic services.</p>
 		</div>
 		<div class="col-md-3"></div>
 	</div>
-	<h1 class="margin-bottom-15">Book Diagnostic Test</h1>
+	<h1 class="margin-bottom-15" style="color: red;">Book Diagnostic Test</h1>
 	<div class="container">
 		<div class="col-md-12">			
-			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="#" method="post">
+			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="mail.php" method="post">
 				<div class="form-inner">
+					<div class="form-group" style="text-align: center; padding-bottom: 15px;">
+						<div class="col-md-3">
+						</div>
+						<div class="col-md-6">
+							<div class="dropdown">
+								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  Select location
+								</button>
+								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								  <a class="dropdown-item" href="#">Jogeshwari-west</a>
+								  <a class="dropdown-item" href="#">Andheri-west</a>
+								</div>
+							  </div>
+						</div>
+						<div class="col-md-3">
+						</div>
+					</div>
 					<div class="form-group" style="text-align: left;">
 					<div class="col-md-4">
-						<label class="check-inline">
+						<label class="check-inline" style="font-weight: 600;">
 							<input type="checkbox" name="optionsRadios" id="optionscheck1" value="option1"> Pathology Test
 						</label>
 					</div>
 					<div class="col-md-4">
-						<label class="check-inline">
+						<label class="check-inline" style="font-weight: 600;">
 							<input type="checkbox" name="optionsRadios" id="optionscheck2" value="option1"> Allergy Test
 						</label>
 					</div>
 					<div class="col-md-4">
-						<label class="check-inline">
+						<label class="check-inline" style="font-weight: 600;">
 							<input type="checkbox" name="optionsRadios" id="optionscheck3" value="option1"> Digital X-Ray
 						</label>
 					</div>
 					<div class="col-md-4">
-						<label class="check-inline">
+						<label class="check-inline" style="font-weight: 600;">
 							<input type="checkbox" name="optionsRadios" id="optionscheck4" value="option1"> Holter Monitoring
 						</label>
 					</div>
 					<div class="col-md-4">
-						<label class="check-inline">
+						<label class="check-inline" style="font-weight: 600;">
 							<input type="checkbox" name="optionsRadios" id="optionscheck5" value="option1"> Ambulatory BP
 						</label>
 					</div>
 					<div class="col-md-4">
-						<label class="check-inline">
+						<label class="check-inline" style="font-weight: 600;">
 							<input type="checkbox" name="optionsRadios" id="optionscheck6" value="option1"> Sleep Study
 						</label>
 					</div>
 					</div>
 					<div class="form-group">
 			        <div class="col-md-6">		          	
-			            <label for="first_name" class="control-label">First Name</label>
+			            <label for="first_name" class="control-label" style="font-weight: 600;">First Name</label>
 			            <input type="text" class="form-control" id="first_name" placeholder="">		            		            		            
 			        </div>  
 			        <div class="col-md-6">		          	
-			            <label for="last_name" class="control-label">Last Name</label>
+			            <label for="last_name" class="control-label" style="font-weight: 600;">Last Name</label>
 			            <input type="text" class="form-control" id="last_name" placeholder="">		            		            		            
 			        </div>             
 			        </div>
 			        <div class="form-group">
 			          <div class="col-md-6">		          	
-			            <label for="username" class="control-label">Email</label>
+			            <label for="username" class="control-label" style="font-weight: 600;">Email</label>
 			            <input type="email" class="form-control" id="email" placeholder="">		            		            		            
 			          </div>
 					  <div class="col-md-6">		          	
-			            <label for="username" class="control-label">Mobile No</label>
+			            <label for="username" class="control-label" style="font-weight: 600;">Mobile No</label>
 			            <input type="number" class="form-control" id="mobile" placeholder="">		            		            		            
 			          </div>              
 			        </div>
 					<div class="form-group">
 					<div class="col-md-12">		          	
-			            <label for="username" class="control-label">Address</label>
+			            <label for="username" class="control-label" style="font-weight: 600;">Address</label>
 			            <textarea class="form-control" id="address" placeholder=""></textarea>		            		            		            
 			          </div>
 					</div>
 					<div class="form-group">
 						<div class="col-md-6">		          	
-						  <label for="username" class="control-label">Type the test details</label>
+						  <label for="username" class="control-label" style="font-weight: 600;">Type the test details</label>
 						  <input type="text" class="form-control" id="test" placeholder="">		            		            		            
 						</div>
 						<div class="col-md-1" style="margin-top: 2rem;margin-bottom: 2rem;">		          	
-							<p>Or</p>		            		            		            
+							<p style="font-weight: 600;">Or</p>		            		            		            
 						  </div>
 						<div class="col-md-5">		          	
-						  <label for="username" class="control-label">Upload the report</label>
+						  <label for="username" class="control-label" style="font-weight: 600;">Upload the report</label>
 						  <input type="file" class="form-control" id="upload" placeholder="">		            		            		            
 						</div>              
 					  </div>
 					<div class="form-group">
 						<div class="col-md-6">		          	
-						  <label for="username" class="control-label">Preferred Date</label>
+						  <label for="username" class="control-label" style="font-weight: 600;">Preferred Date</label>
 						  <input type="date" class="form-control" id="date" placeholder="">		            		            		            
 						</div>
 						<div class="col-md-6">		          	
-						  <label for="username" class="control-label">Preferred Time</label>
+						  <label for="username" class="control-label" style="font-weight: 600;">Preferred Time</label>
 						  <input type="time" class="form-control" id="time" placeholder="">		            		            		            
 						</div>              
 					</div>
@@ -393,8 +424,7 @@
   
 	<!-- Copyright -->
 	<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-	  © 2024 Copyright:
-	  <a class="text-reset fw-bold" href="">8Bit Tech Solutions</a>
+	  © 2024 Copyright: All rights reserved.
 	</div>
 	<!-- Copyright -->
   </footer>
@@ -409,6 +439,7 @@ function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
 	</script>
+	
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
