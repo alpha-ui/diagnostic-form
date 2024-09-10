@@ -132,6 +132,26 @@
 	</style>
 </head>
 <body class="templatemo-bg-gray">
+
+	<!-- website translator start -->
+	<!-- <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script>
+
+    <script type="text/javascript" 
+            src=
+"https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+    </script> -->
+
+	<!-- website translator end -->
 	<nav class="navbar fixed-top navbar-light bg-light">
 		<img src="images/logo.png" style="height: 100px;width: auto;">
 		<span>
@@ -182,113 +202,100 @@
 	<h1 class="margin-bottom-15" style="color: red;">Book Diagnostic Test</h1>
 	<div class="container">
 		<div class="col-md-12">			
-			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="mail.php" method="post">
-				<div class="form-inner">
-					<div class="form-group" style="text-align: center; padding-bottom: 15px;">
-						<div class="col-md-3">
-						</div>
-						<div class="col-md-6">
-							<div class="dropdown">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								  Select location
-								</button>
-								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								  <a class="dropdown-item" href="#">Jogeshwari-west</a>
-								  <a class="dropdown-item" href="#">Andheri-west</a>
-								</div>
-							  </div>
-						</div>
-						<div class="col-md-3">
-						</div>
-					</div>
-					<div class="form-group" style="text-align: left;">
+			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="mail.php" method="post" enctype="multipart/form-data">
+				<!-- Checkbox Options -->
+				<div class="form-group" style="text-align: left;">
 					<div class="col-md-4">
 						<label class="check-inline" style="font-weight: 600;">
-							<input type="checkbox" name="optionsRadios" id="optionscheck1" value="option1"> Pathology Test
+							<input type="checkbox" name="optionsRadios[]" id="optionscheck1" value="Pathology Test"> Pathology Test
 						</label>
 					</div>
 					<div class="col-md-4">
 						<label class="check-inline" style="font-weight: 600;">
-							<input type="checkbox" name="optionsRadios" id="optionscheck2" value="option1"> Allergy Test
+							<input type="checkbox" name="optionsRadios[]" id="optionscheck2" value="Allergy Test"> Allergy Test
 						</label>
 					</div>
 					<div class="col-md-4">
 						<label class="check-inline" style="font-weight: 600;">
-							<input type="checkbox" name="optionsRadios" id="optionscheck3" value="option1"> Digital X-Ray
+							<input type="checkbox" name="optionsRadios[]" id="optionscheck3" value="Digital X-Ray"> Digital X-Ray
 						</label>
 					</div>
 					<div class="col-md-4">
 						<label class="check-inline" style="font-weight: 600;">
-							<input type="checkbox" name="optionsRadios" id="optionscheck4" value="option1"> Holter Monitoring
+							<input type="checkbox" name="optionsRadios[]" id="optionscheck4" value="Holter Monitoring"> Holter Monitoring
 						</label>
 					</div>
 					<div class="col-md-4">
 						<label class="check-inline" style="font-weight: 600;">
-							<input type="checkbox" name="optionsRadios" id="optionscheck5" value="option1"> Ambulatory BP
+							<input type="checkbox" name="optionsRadios[]" id="optionscheck5" value="Ambulatory BP"> Ambulatory BP
 						</label>
 					</div>
 					<div class="col-md-4">
 						<label class="check-inline" style="font-weight: 600;">
-							<input type="checkbox" name="optionsRadios" id="optionscheck6" value="option1"> Sleep Study
+							<input type="checkbox" name="optionsRadios[]" id="optionscheck6" value="Sleep Study"> Sleep Study
 						</label>
 					</div>
+				</div>
+			
+				<!-- Input Fields for User Data -->
+				<div class="form-group">
+					<div class="col-md-6">
+						<label for="first_name">First Name</label>
+						<input type="text" class="form-control" id="first_name" name="first_name" placeholder="">
 					</div>
-					<div class="form-group">
-			        <div class="col-md-6">		          	
-			            <label for="first_name" class="control-label" style="font-weight: 600;">First Name</label>
-			            <input type="text" class="form-control" id="first_name" placeholder="">		            		            		            
-			        </div>  
-			        <div class="col-md-6">		          	
-			            <label for="last_name" class="control-label" style="font-weight: 600;">Last Name</label>
-			            <input type="text" class="form-control" id="last_name" placeholder="">		            		            		            
-			        </div>             
-			        </div>
-			        <div class="form-group">
-			          <div class="col-md-6">		          	
-			            <label for="username" class="control-label" style="font-weight: 600;">Email</label>
-			            <input type="email" class="form-control" id="email" placeholder="">		            		            		            
-			          </div>
-					  <div class="col-md-6">		          	
-			            <label for="username" class="control-label" style="font-weight: 600;">Mobile No</label>
-			            <input type="number" class="form-control" id="mobile" placeholder="">		            		            		            
-			          </div>              
-			        </div>
-					<div class="form-group">
-					<div class="col-md-12">		          	
-			            <label for="username" class="control-label" style="font-weight: 600;">Address</label>
-			            <textarea class="form-control" id="address" placeholder=""></textarea>		            		            		            
-			          </div>
+					<div class="col-md-6">
+						<label for="last_name">Last Name</label>
+						<input type="text" class="form-control" id="last_name" name="last_name" placeholder="">
 					</div>
-					<div class="form-group">
-						<div class="col-md-6">		          	
-						  <label for="username" class="control-label" style="font-weight: 600;">Type the test details</label>
-						  <input type="text" class="form-control" id="test" placeholder="">		            		            		            
-						</div>
-						<div class="col-md-1" style="margin-top: 2rem;margin-bottom: 2rem;">		          	
-							<p style="font-weight: 600;">Or</p>		            		            		            
-						  </div>
-						<div class="col-md-5">		          	
-						  <label for="username" class="control-label" style="font-weight: 600;">Upload the Prescription</label>
-						  <input type="file" class="form-control" id="upload" placeholder="" multiple>		            		            		            
-						</div>              
-					  </div>
-					<div class="form-group">
-						<div class="col-md-6">		          	
-						  <label for="username" class="control-label" style="font-weight: 600;">Preferred Date</label>
-						  <input type="date" class="form-control" id="date" placeholder="">		            		            		            
-						</div>
-						<div class="col-md-6">		          	
-						  <label for="username" class="control-label" style="font-weight: 600;">Preferred Time</label>
-						  <input type="time" class="form-control" id="time" placeholder="">		            		            		            
-						</div>              
+				</div>
+			
+				<div class="form-group">
+					<div class="col-md-6">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" id="email" name="email" placeholder="">
 					</div>
-			        <div class="form-group">
-			          <div class="col-md-12">
-			            <input type="submit" value="Submit" class="btn btn-info">
-			          </div>
-			        </div>	
-				</div>				    	
-		      </form>		      
+					<div class="col-md-6">
+						<label for="mobile">Mobile No</label>
+						<input type="number" class="form-control" id="mobile" name="mobile" placeholder="">
+					</div>
+				</div>
+			
+				<div class="form-group">
+					<div class="col-md-12">
+						<label for="address">Address</label>
+						<textarea class="form-control" id="address" name="address" placeholder=""></textarea>
+					</div>
+				</div>
+			
+				<!-- Test Details and File Upload -->
+				<div class="form-group">
+					<div class="col-md-6">
+						<label for="test">Test Details</label>
+						<input type="text" class="form-control" id="test" name="test" placeholder="">
+					</div>
+					<div class="col-md-6">
+						<label for="upload">Upload Prescription</label>
+						<input type="file" class="form-control" id="upload" name="upload[]" placeholder="" multiple>
+					</div>
+				</div>
+			
+				<!-- Date and Time Fields -->
+				<div class="form-group">
+					<div class="col-md-6">
+						<label for="date">Preferred Date</label>
+						<input type="date" class="form-control" id="date" name="date" placeholder="">
+					</div>
+					<div class="col-md-6">
+						<label for="time">Preferred Time</label>
+						<input type="time" class="form-control" id="time" name="time" placeholder="">
+					</div>
+				</div>
+			
+				<!-- Submit Button -->
+				<div class="form-group">
+					<input type="submit" value="Submit" class="btn btn-info">
+				</div>
+			</form>						  
 		</div>
 	</div>
 	<div class="container">
