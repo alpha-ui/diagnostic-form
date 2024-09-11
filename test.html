@@ -221,6 +221,10 @@ cb=googleTranslateElementInit">
 						<div class="col-md-3">
 						</div>
 					</div>
+
+					<!-- Hidden input for location -->
+					<input type="hidden" id="location" name="location" value="">
+
 					<!-- Checkbox Options -->
 				<div class="form-group" style="text-align: left;">
 					<div class="col-md-4">
@@ -485,5 +489,21 @@ function closePopup() {
             });
         });
 </script>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		var dropdownItems = document.querySelectorAll('.dropdown-item');
+		var dropdownText = document.getElementById('dropdownMenuText');
+		var locationInput = document.getElementById('location');
+	
+		dropdownItems.forEach(function(item) {
+			item.addEventListener('click', function(e) {
+				e.preventDefault(); // Prevent default link behavior
+				var location = this.getAttribute('data-value');
+				dropdownText.textContent = location;
+				locationInput.value = location;
+			});
+		});
+	});
+	</script>
 </body>
 </html>
