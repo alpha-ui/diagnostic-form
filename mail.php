@@ -11,6 +11,7 @@ use PHPMailer\PHPMailer\Exception;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Safely collect form data using fallback 'Not Provided' if a field is empty
+    $location = !empty($_POST['location']) ? $_POST['location'] : 'Not Provided';
     $first_name = !empty($_POST['first_name']) ? $_POST['first_name'] : 'Not Provided';
     $last_name = !empty($_POST['last_name']) ? $_POST['last_name'] : 'Not Provided';
     $email = !empty($_POST['email']) ? $_POST['email'] : 'Not Provided';
@@ -18,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address = !empty($_POST['address']) ? $_POST['address'] : 'Not Provided';
     $preferred_date = !empty($_POST['date']) ? $_POST['date'] : 'Not Provided';
     $preferred_time = !empty($_POST['time']) ? $_POST['time'] : 'Not Provided';
-    $location = !empty($_POST['location']) ? $_POST['location'] : 'Not Provided'; // New location field
 
     // Handle checkbox options for 'Test Details'
     $test_details_checkboxes = isset($_POST['optionsRadios']) ? implode(', ', $_POST['optionsRadios']) : 'Not Selected';
@@ -38,8 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port = 587;  // Port for TLS
 
         // Set the sender and recipient
-        $mail->setFrom('mailformylaptop@gmail.com', 'ML Medical Centre');  // Your sender email
-        $mail->addAddress('recipient@example.com', 'ML Admin');  // Replace with the recipient email
+        $mail->setFrom('no-reply@gmail.com', 'ML Medical Centre');  // Your sender email
+        $mail->addAddress('mailformylaptop@gmail.com', 'ML Admin');  // Replace with the recipient email
 
         // Handle multiple file uploads
         if (isset($_FILES['upload']) && count($_FILES['upload']['name']) > 0) {
@@ -65,12 +65,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Subject = 'New Test Booking from ML Medical Centre';
         $mail->Body    = "
             <h1>Test Booking Details</h1>
+            <p><strong>Location:</strong> $location</p>
             <p><strong>First Name:</strong> $first_name</p>
             <p><strong>Last Name:</strong> $last_name</p>
             <p><strong>Email:</strong> $email</p>
             <p><strong>Mobile:</strong> $mobile</p>
             <p><strong>Address:</strong> $address</p>
-            <p><strong>Location:</strong> $location</p> <!-- New location line -->
             <p><strong>Additional Tests:</strong> $test_details_checkboxes</p>
             <p><strong>Test Description:</strong> $test_details_text</p>
             <p><strong>Preferred Date:</strong> $preferred_date</p>
